@@ -170,13 +170,13 @@ class PasswordGeneratorApp:
 
         all_characters = "".join(pools)
 
-        # Guarantee at least one character from every selected type.
+        
         password_chars = [secrets.choice(pool) for pool in pools]
 
         while len(password_chars) < length:
             password_chars.append(secrets.choice(all_characters))
 
-        # Securely shuffle the final characters.
+        
         for i in range(len(password_chars) - 1, 0, -1):
             j = secrets.randbelow(i + 1)
             password_chars[i], password_chars[j] = password_chars[j], password_chars[i]
@@ -187,7 +187,7 @@ class PasswordGeneratorApp:
         self.update_strength(password, len(pools))
         self.add_to_history(password)
 
-        # Advanced requirement: automatically copy generated password.
+        
         self.copy_password(silent=True)
 
     def update_strength(self, password, diversity):
