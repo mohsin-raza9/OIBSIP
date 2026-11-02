@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+bmi_records.db
+bmi_records.db-shm
+bmi_records.db-wal
+.venv/
+venv/
+.env

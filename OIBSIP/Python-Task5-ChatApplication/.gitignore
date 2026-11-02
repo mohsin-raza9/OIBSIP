@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+chat.db
+chat.db-shm
+chat.db-wal
+*.log
