@@ -297,7 +297,6 @@ class ChatClient:
                     self.root.after(0, self.update_rooms, data.get("rooms", []))
 
                 elif message_type == "message":
-                    # Only display a live message if it belongs to the room currently open.
                     if data.get("room") != self.room:
                         continue
                     message = render_shortcodes(data.get("message", ""))
@@ -307,7 +306,6 @@ class ChatClient:
                     )
 
                 elif message_type == "system":
-                    # System events are also limited to their own room.
                     if data.get("room") != self.room:
                         continue
                     self.append_message(
